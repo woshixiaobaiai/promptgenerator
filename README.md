@@ -28,8 +28,8 @@ A powerful, free tool for generating high-quality prompts for Google's Veo3 AI v
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/veo3promptgenerator.git
-cd veo3promptgenerator
+git clone https://github.com/woshixiaobaiai/promptgenerator.git
+cd promptgenerator
 ```
 
 ### 2. Install Dependencies
