@@ -16,6 +16,15 @@
 * **📱 自适应界面**：桌面与移动端均可完美使用
 * **⚡ 实时生成**：即时输出并可实时预览
 
+## 📷 截图
+
+![demo](screenshot1.png) 
+![demo](screenshot2.png) 
+![demo](screenshot3.png) 
+![demo](screenshot4.png) 
+![demo](screenshot5.png) 
+
+
 ## 🚀 快速开始
 
 ### 1. 克隆仓库
