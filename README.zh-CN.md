@@ -282,6 +282,9 @@ const status = aiService.getAPIStatus();
 * **Tailwind CSS**：高效优雅的样式系统
 * **OpenRouter**：提供额外的 API 接入能力
 
----
+## 💬 作者 & 致谢
+我是小白 ai，从我的公众号联系我：  
+<img src="https://github.com/user-attachments/assets/4a8f8755-2157-40ae-8f39-ac8e8011f850" width="350">
+[Amanai05/veo3promptgenerator](https://github.com/Amanai05/veo3promptgenerator))
 
 **献给 AI 视频生成社区的爱与热忱 ❤️**
