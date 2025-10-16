@@ -254,10 +254,10 @@ export default function ContactPage() {
               </p>
               <div className="flex justify-center gap-4">
                 <Button variant="outline" asChild>
-                  <a href="/xz/faq">查看 FAQ</a>
+                  <a href="/zh/faq">查看 FAQ</a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="/xz/help">帮助中心</a>
+                  <a href="/zh/help">帮助中心</a>
                 </Button>
               </div>
             </div>
