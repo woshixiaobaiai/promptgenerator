@@ -1,0 +1,250 @@
+import { MainHero } from "@/components/main-hero"
+import { HomeSections } from "@/components/home-sections"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Veo3 Prompt Generator - Free AI Video Prompt Creator | Professional Content Tools",
+  description: "Create professional Veo3 prompts and video scripts with our free AI-powered generator. Perfect for content creators, marketers, and businesses. Transform ideas into high-quality video content instantly.",
+  keywords: "Veo3 prompt generator, AI video prompts, video script generator, content creation tools, AI video generation, Google Veo3, prompt engineering, video content creation, free AI tools, video marketing, social media content, YouTube prompts, TikTok content, Instagram videos, professional video scripts, AI content creation, video production tools, digital marketing, content marketing, video advertising",
+  authors: [{ name: "Veo3 Prompt Generator Team" }],
+  creator: "Veo3 Prompt Generator",
+  publisher: "Veo3 Prompt Generator",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://veo3promptgenerator.online"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Veo3 Prompt Generator - Free AI Video Prompt Creator | Professional Content Tools",
+    description: "Create professional Veo3 prompts and video scripts with our free AI-powered generator. Perfect for content creators, marketers, and businesses. Transform ideas into high-quality video content instantly.",
+          url: "https://veo3promptgenerator.online",
+    siteName: "Veo3 Prompt Generator",
+    images: [
+      {
+        url: "/images/og-image-1200x630.png",
+        width: 1200,
+        height: 630,
+        alt: "Veo3 Prompt Generator - AI Video Prompt Creator",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veo3 Prompt Generator - Free AI Video Prompt Creator",
+    description: "Create professional Veo3 prompts and video scripts with our free AI-powered generator.",
+    images: ["/images/og-image-1200x630.png"],
+    creator: "@veo3promptgen",
+    site: "@veo3promptgen",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
+    yahoo: "your-yahoo-verification-code",
+  },
+  category: "Technology",
+  classification: "AI Tools",
+  other: {
+    "theme-color": "#6366f1",
+    "color-scheme": "light dark",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "Veo3 Prompt Generator",
+    "application-name": "Veo3 Prompt Generator",
+    "msapplication-TileColor": "#6366f1",
+    "msapplication-config": "/browserconfig.xml",
+  },
+}
+
+export default function HomePage() {
+  return (
+    <>
+      <main>
+        <MainHero />
+        <HomeSections />
+      </main>
+      
+      {/* Organization Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Veo3 Prompt Generator",
+                    "url": "https://veo3promptgenerator.online",
+        "logo": "https://veo3promptgenerator.online/images/og-image-1200x630.png",
+            "description": "Free AI-powered Veo3 prompt generator for content creators, marketers, and businesses",
+            "sameAs": [
+              "https://twitter.com/veo3promptgen",
+              "https://linkedin.com/company/veo3promptgenerator",
+              "https://facebook.com/veo3promptgenerator",
+              "https://instagram.com/veo3promptgenerator"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "veo3promptgenerator.online@gmail.com",
+              "availableLanguage": "English"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "foundingDate": "2024",
+            "numberOfEmployees": "10-50"
+          })
+        }}
+      />
+      
+      {/* WebSite Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Veo3 Prompt Generator",
+                    "url": "https://veo3promptgenerator.online",
+        "description": "Free AI-powered Veo3 prompt generator and video script creator",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://veo3promptgenerator.online/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "inLanguage": "en-US",
+            "isAccessibleForFree": true
+          })
+        }}
+      />
+      
+      {/* SoftwareApplication Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Veo3 Prompt Generator",
+            "applicationCategory": "ContentCreationApplication",
+            "operatingSystem": "Web Browser",
+            "description": "AI-powered tool for creating professional Veo3 prompts and video scripts",
+                    "url": "https://veo3promptgenerator.online",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "Veo3 Prompt Generation",
+          "Video Script Creation",
+          "AI-Powered Content Tools",
+          "Professional Templates",
+          "Free Online Access",
+          "Multi-Language Support",
+          "Advanced Customization",
+          "Real-time Generation"
+        ],
+        "screenshot": "https://veo3promptgenerator.online/images/og-image-1200x630.png",
+        "softwareVersion": "1.0.0",
+        "releaseNotes": "Latest version with enhanced AI capabilities and multi-API support",
+        "downloadUrl": "https://veo3promptgenerator.online",
+        "installUrl": "https://veo3promptgenerator.online",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "1250",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "Veo3 Prompt Generator Team"
+            }
+          })
+        }}
+      />
+
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://veo3promptgenerator.online"
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Veo3 Prompt Generator?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Veo3 Prompt Generator is a free AI-powered tool that helps content creators, marketers, and businesses create professional video prompts and scripts for Google's Veo3 AI video generation platform."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Veo3 Prompt Generator free to use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Veo3 Prompt Generator is completely free to use. You can create unlimited video prompts and scripts without any cost."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What types of content can I create?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can create various types of content including marketing videos, educational content, storytelling videos, promotional content, and more for platforms like YouTube, TikTok, Instagram, and other social media."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need technical skills to use this tool?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No technical skills required! Our AI-powered interface makes it easy for anyone to create professional video content. Simply describe your idea and our AI will generate the perfect prompt."
+                }
+              }
+            ]
+          })
+        }}
+      />
+    </>
+  )
+}
