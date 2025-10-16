@@ -15,13 +15,13 @@ A powerful, free tool for generating high-quality prompts for Google's Veo3 AI v
 - **📱 Responsive Design**: Works perfectly on desktop and mobile devices
 - **⚡ Real-time Generation**: Instant prompt generation with live preview
 
-## 📷 screenshot（example）
+## 📷 screenshot
 
-![demo](screenshot1.png) 
-![demo](screenshot2.png) 
-![demo](screenshot3.png) 
-![demo](screenshot4.png) 
-![demo](screenshot5.png) 
+![demo](screenshot01.png) 
+![demo](screenshot02.png) 
+![demo](screenshot03.png) 
+![demo](screenshot04.png) 
+![demo](screenshot05.png) 
 
 
 ## 🚀 Quick Start
