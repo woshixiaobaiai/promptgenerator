@@ -1,3 +1,5 @@
+English | [中文说明](./README.zh-CN.md)
+
 # Veo3 Prompt Generator
 
 A powerful, free tool for generating high-quality prompts for Google's Veo3 AI video generation platform. Create cinematic 8-second video prompts with advanced customization options.
