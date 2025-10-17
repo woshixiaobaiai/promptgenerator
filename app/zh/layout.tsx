@@ -126,7 +126,8 @@ export default function RootLayout({
         <link rel="canonical" href="https://veo3promptgenerator.online" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        {/* Clarity 追踪代码（站点：https://veo3promptgenerator.online） */}
+        {/* Clarity 追踪代码（站点：https://veo3promptgenerator.online） 
+        {/* 
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -138,6 +139,7 @@ export default function RootLayout({
             `
           }}
         />
+        */}
       </head>
       <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
