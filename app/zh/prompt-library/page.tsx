@@ -108,7 +108,7 @@ export default function PromptLibraryPage() {
             使用我们的 AI 生成器，快速定制符合你项目需求的高质量提示词。
           </p>
           <Button asChild size="lg">
-            <a href="/#generator">立即生成</a>
+            <a href="/zh">立即生成</a>
           </Button>
         </div>
       </div>
