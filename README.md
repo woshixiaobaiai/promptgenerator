@@ -268,7 +268,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Next.js**: For the excellent React framework
 - **Tailwind CSS**: For the beautiful styling system
 - **OpenRouter**: For providing additional API access
-
+- **Amanai05/veo3promptgenerator**：For providing basecode
 ---
 
 **Made with ❤️ for the AI video generation community**
