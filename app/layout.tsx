@@ -152,6 +152,7 @@ export default function RootLayout({
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         {/* Clarity tracking code for https://veo3promptgenerator.online */}
+        {/* 
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -163,6 +164,7 @@ export default function RootLayout({
             `
           }}
         />
+        */}
       </head>
       <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
