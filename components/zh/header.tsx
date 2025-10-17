@@ -106,6 +106,12 @@ export function Header() {
               提示词指南
             </Link>
             <Link
+              href="/zh/prompt-library"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-muted/50"
+            >
+              提示词库
+            </Link>
+            <Link
               href="/zh/about"
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-muted/50"
             >
