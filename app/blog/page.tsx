@@ -1,174 +1,640 @@
-import Link from "next/link"
+import { notFound } from "next/navigation"
 import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CalendarDays, User, Clock } from "lucide-react"
-import { Metadata } from "next"
+import { CalendarDays, User, ArrowLeft, Clock } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Veo3 Blog - AI Video Generation Tips, Tutorials & Industry Insights",
-  description: "Discover expert tips, tutorials, and insights on AI video generation, Veo3 prompts, content creation, and the latest trends in digital media. Stay ahead with our comprehensive guides.",
-  keywords: "Veo3 blog, AI video generation tips, prompt engineering tutorials, content creation guides, video marketing insights, AI video trends, digital media blog, content creator resources, video production tips, AI tools blog, Veo3 tutorials, video content strategy",
-  authors: [{ name: "Veo3 Prompt Generator Team" }],
-  creator: "Veo3 Prompt Generator",
-  publisher: "Veo3 Prompt Generator",
-  metadataBase: new URL("https://veo3promptgenerator.online"),
-  alternates: {
-    canonical: "/blog",
-  },
-  openGraph: {
-    title: "Veo3 Blog - AI Video Generation Tips, Tutorials & Industry Insights",
-    description: "Discover expert tips, tutorials, and insights on AI video generation, Veo3 prompts, content creation, and the latest trends in digital media.",
-    url: "https://veo3promptgenerator.online/blog",
-    siteName: "Veo3 Prompt Generator",
-    images: [
-      {
-        url: "/images/og-image-1200x630.png",
-        width: 1200,
-        height: 630,
-        alt: "Veo3 Blog - AI Video Generation Tips & Tutorials",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Veo3 Blog - AI Video Generation Tips, Tutorials & Industry Insights",
-    description: "Discover expert tips, tutorials, and insights on AI video generation, Veo3 prompts, content creation, and the latest trends in digital media.",
-    images: ["/images/og-image-1200x630.png"],
-    creator: "@veo3promptgen",
-    site: "@veo3promptgen",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-}
+const blogPosts = {
+  "ai-prompt-engineering-guide": {
+    title: "2024 年 AI 提示词工程完整指南",
+    author: "Sarah Johnson",
+    date: "2024-01-15",
+    image: "/placeholder.svg?height=400&width=800&text=AI+Prompt+Guide",
+    category: "指南",
+    readTime: "阅读约 8 分钟",
+    content: `
+# 2024 年 AI 提示词工程完整指南
 
-const blogPosts = [
-  {
-    id: "complete-guide-veo3-prompts",
-    title: "Complete Guide to Veo3 Prompts: Master AI Video Generation",
-    excerpt:
-      "Learn how to create compelling Veo3 prompts that generate stunning AI videos. From basic concepts to advanced techniques, this comprehensive guide covers everything you need to know.",
+在 AI 时代，提示词工程已成为最有价值的技能之一。无论你使用的是 ChatGPT、Claude、Gemini，还是其他任何大语言模型，你给出的提示词质量会直接影响你获得的回复质量。
+
+## 什么是提示词工程？
+
+提示词工程（Prompt Engineering）是指设计与打磨输入提示，以从 AI 模型中获得最准确、最相关、最有用的响应的实践。它既是艺术也是科学，融合了对语言、心理学以及 AI 模型行为的理解。
+
+## 高效提示的关键原则
+
+### 1. 具体且清晰
+含糊的提示只会得到含糊的回答。不要说“写一篇关于营销的文章”，而是“为小型企业撰写一篇约 500 字的邮件营销最佳实践博客文章”。
+
+### 2. 提供上下文
+给模型足够的背景信息，帮助它理解你的诉求。上下文能让模型生成更相关、更准确的结果。
+
+### 3. 使用示例
+在可能的情况下，提供你期望输出的示例。这有助于模型理解你想要的格式、语气和风格。
+
+### 4. 拆解复杂任务
+与其一次性提出所有需求，不如将复杂请求拆分为更小、更易管理的步骤。
+
+## 进阶提示技巧
+
+### 思维链提示（Chain of Thought）
+让 AI 逐步展示其推理过程。可以在提示中加入“我们一步步来想”或“请展示你的过程”等措辞。
+
+### 角色扮演提示（Role-Based）
+让 AI 扮演特定角色或人设。例如：“请以专业文案的身份撰写……”
+
+### 模板化提示（Template）
+为常见任务创建可复用的提示模板，既能保持一致性，也能节省时间。
+
+## 常见错误避免
+
+1. **过于笼统或泛化**
+2. **缺乏必要上下文**
+3. **在一个提示里提出多个互不相关的问题**
+4. **忽视 AI 的能力边界**
+5. **不进行迭代与打磨**
+
+## 工具与资源
+
+- **VeO3 提示生成器**：立即生成专业级提示
+- **提示词库**：覆盖多类场景的高质量提示集合
+- **AI 模型文档**：了解各模型的优势与限制
+
+## 结语
+
+掌握提示词工程需要练习，但非常值得。随着 AI 模型不断演进，如何与之高效沟通将愈发重要。
+
+从基础做起，尝试不同技巧，敢于迭代优化。最好的提示往往来自多轮打磨。
+    `,
+  },
+  "video-prompt-best-practices": {
+    title: "视频提示词生成最佳实践",
+    author: "Mike Chen",
+    date: "2024-01-10",
+    image: "/placeholder.svg?height=400&width=800&text=Video+Prompts",
+    category: "教程",
+    readTime: "阅读约 6 分钟",
+    content: `
+# 视频提示词生成最佳实践
+
+要用 AI 工具生成高质量视频内容，首先需要有效的视频提示词。本指南将介绍编写高质量提示的核心做法，帮助你获得更出色的结果。
+
+## 了解视频提示的结构
+
+一个结构良好的视频提示应包含：
+- **主体/主要焦点**：视频的对象或主题是什么？
+- **动作/运动**：视频中发生了什么？
+- **场景/环境**：动作发生在什么地点？
+- **风格/氛围**：整体的感觉与审美？
+- **技术规格**：时长、纵横比、质量要求等
+
+## 优秀视频提示的关键要素
+
+### 1. 清晰的视觉描述
+明确你想看到什么。别只写“一个人走路”，可以改为“身穿红色外套的年轻女性，自信地穿行于繁忙的城市街道”。
+
+### 2. 动作与运动
+描述你希望出现的运动类型。使用“滑行”“疾行”“漂浮”“旋转”等动作动词。
+
+### 3. 取景与机位
+明确镜头与运动方式：“特写镜头”“广角开场镜头”“镜头由左向右平移”等。
+
+### 4. 灯光与氛围
+描述光线环境：“黄金时刻光线”“戏剧化阴影”“柔和自然光”等。
+
+## 视频特有的注意事项
+
+### 画幅与格式
+- **16:9**：YouTube/网页常用横屏
+- **9:16**：TikTok/Instagram 故事纵向
+- **1:1**：Instagram 方形帖子
+
+### 时长建议
+- **短片段（5–15 秒）**：聚焦单一动作或瞬间
+- **中等长度（15–60 秒）**：可包含多个场景或动作
+- **更长内容**：拆分为多个提示以获得更稳定效果
+
+## 常见视频提示问题
+
+1. **元素过多**：在一个提示塞入太多细节
+2. **指令冲突**：要求出现互相矛盾的要素
+3. **忽略物理常识**：要求不可能的动作
+4. **描述含糊**：未明确期望结果
+
+## 有效视频提示示例
+
+### 示例 1：产品展示
+“在白色背景上，流线型智能手机缓慢旋转的特写镜头，戏剧化灯光勾勒金属边缘，10 秒内完成 360 度旋转，专业产品摄影风格。”
+
+### 示例 2：自然场景
+“日出时分宁静的高山湖泊大全景，水面升起轻薄雾气，镜头缓慢横移，黄金时刻光线，宁静平和的氛围。”
+
+## 不同视频类型的小技巧
+
+### 营销视频
+- 突出产品/服务的核心利益点
+- 提供明确的行动号召（CTA）
+- 针对目标受众定制内容
+
+### 教育内容
+- 将复杂主题拆解为可消化的段落
+- 使用类比和可视化示例
+- 保持稳定节奏
+
+### 娱乐向
+- 强调情绪感染力
+- 使用动态镜头
+- 构建有吸引力的叙事
+
+## 结语
+
+优秀的视频提示是成功 AI 视频生成的基石。遵循最佳实践并持续迭代，你将持续产出高质量、吸引人的视频内容。
+
+记得不断实验、迭代与复盘，从每次结果中学习，提升你的提示技巧。
+    `,
+  },
+  "complete-guide-veo3-prompts": {
+    title: "Veo3 提示词完整指南：掌握 AI 视频生成",
     author: "Sarah Johnson",
     date: "2024-01-20",
-    image: "/placeholder.svg?height=200&width=400&text=Veo3+Guide",
-    category: "Guide",
-    readTime: "12 min read",
+    image: "/placeholder.svg?height=400&width=800&text=Veo3+Guide",
+    category: "指南",
+    readTime: "阅读约 12 分钟",
+    content: `
+# Veo3 提示词完整指南：掌握 AI 视频生成
+
+Google 的 Veo3 标志着 AI 视频生成技术的重大飞跃。本指南将系统介绍如何编写高效提示，从而生成令人惊艳、专业水准的视频。
+
+## 什么是 Veo3？
+
+Veo3 是 Google 最新的文本生成视频模型，可根据文字提示生成高质量视频。与前代相比，Veo3 具备：
+- **更高分辨率**：最高可至 4K
+- **更长时长**：最长可达 2 分钟
+- **更好一致性**：时间一致性与角色一致性显著提升
+- **更强理解力**：对复杂场景与动作的理解更成熟
+
+## 理解提示结构
+
+### 基础组成
+
+一个结构良好的 Veo3 提示应包含：
+
+1. **主体描述**：画面的主要人物/物体是谁或是什么
+2. **动作/运动**：场景中正在发生什么
+3. **场景/环境**：动作发生的空间位置
+4. **风格/气质**：整体审美与情绪氛围
+5. **技术规格**：镜头语言、光线设置等
+
+### 优秀提示示例
+
+不要写：“一个人在走路”
+
+可以写：“一位身穿飘逸红裙的年轻女子，在巴黎的鹅卵石街道上自信前行，时间为黄金时刻；镜头跟拍，电影级暖色调光影。”
+
+## 进阶提示技巧
+
+### 1. 角色一致性
+当你的视频包含反复出现的角色时，应保持一致：
+- 给出详尽的外貌与特征描述
+- 保持统一的命名与称谓
+- 在新提示中引用此前成功案例
+
+### 2. 场景构图
+有效的构图包括：
+- **前景 / 中景 / 背景**：有层次地组织元素
+- **三分法**：关键元素按三分线布局
+- **引导线**：用线条引导视线
+
+### 3. 时间一致性
+在较长视频中要保证自然过渡：
+- 描述动作的时间推进
+- 保持光线条件的一致
+- 使用“逐渐”“缓慢”“突然”等过渡词
+
+## 常见误区
+
+### 1. 过度复杂
+- **不要**：在一个提示塞入太多元素
+- **要**：聚焦 3–5 个关键点
+
+### 2. 描述含糊
+- **不要**：“一个不错的场景，有人”
+- **要**：“三位朋友在星空下围着篝火大笑”
+
+### 3. 忽略技术细节
+- **不要**：忽视镜头与光线
+- **要**：明确“特写/广角/柔光/侧逆光”等
+
+## 不同视频类型的提示模板
+
+### 营销视频
+
+\`\`\`
+[产品/服务] 在 [场景] 中由 [目标受众] 展示 [核心利益]，画面风格 [Style]，氛围 [Mood/Tone]，镜头 [Camera Movement]，灯光 [Lighting Condition]
+\`\`\`
+
+### 教育内容
+
+\`\`\`
+[专家/老师] 在 [教学场景] 讲解 [主题]，配合 [可视化辅助]，表达清晰有吸引力，[镜头角度]，专业级灯光
+\`\`\`
+
+### 娱乐/社媒
+
+\`\`\`
+[角色/人物] 在 [有趣场景] 进行 [动作]，情绪 [Emotional Tone]，风格 [Trending Style]，镜头 [Camera Movement]，色彩 [Color Palette]
+\`\`\`
+
+## 面向不同平台的优化
+
+### YouTube（16:9 横屏）
+- 强调叙事与粘性
+- 使用动态镜头
+- 保持清晰的视觉层级
+
+### TikTok/Instagram Reels（9:16 竖屏）
+- 垂直构图优先
+- 开场迅速抓人
+- 色彩大胆鲜明
+
+### LinkedIn（方形或横屏）
+- 专业语气与场景
+- 清晰、信息密集
+- 风格克制成熟
+
+## 测试与迭代
+
+### A/B 测试你的提示
+
+1. **创建变体**：在细节上做轻微改动
+2. **对比结果**：分析哪些元素更有效
+3. **持续优化**：把经验应用到后续提示
+
+### 提示打磨流程
+
+1. **从简开始**：先写基础结构
+2. **逐步加细节**：按需增强描述
+3. **尝试不同思路**：风格与技法多样化
+4. **记录有效做法**：沉淀成提示库
+
+## 高级能力
+
+### 多场景视频
+对于复杂叙事：
+- 拆分为独立场景
+- 保持角色与环境一致
+- 在场景间使用过渡元素
+
+### 自定义风格
+可以尝试：
+- **艺术风格**：“致敬 [艺术家/流派]”
+- **电影技法**：“仿 [类型] 电影手法”
+- **色彩分级**：“采用 [具体色彩方案]”
+
+## 常见问题排查
+
+### 角色形象不一致
+**解决**：提供更详细外貌描述，并引用此前成功提示
+
+### 动作不真实
+**解决**：参考真实物理与运动规律，调整描述
+
+### 画质不佳
+**解决**：明确“高质量/4K/专业电影摄影”等技术要求
+
+## Veo3 与 AI 视频的未来
+
+随着 Veo3 的持续演进，我们将看到：
+- **更强真实感**：更逼真的生成质量
+- **更高可控性**：对元素实现更精细控制
+- **更好集成**：与其他创作工具无缝衔接
+- **更强易用性**：降低上手门槛
+
+## 结语
+
+掌握 Veo3 提示既是艺术也是科学。关键是从清晰、具体的描述开始，并在实践中不断打磨。最好的提示往往**具体、结构清晰、且面向目标应用场景**。
+
+保持练习，勇于尝试多种技法，并持续迭代。随着经验积累，你会更直觉地与 Veo3 沟通，生成你心中所想的画面。
+
+## 延伸资源
+
+- **Veo3 官方文档**：追踪最新特性
+- **社区论坛**：借鉴其他创作者经验
+- **提示词库**：沉淀高效提示
+- **视频分析工具**：拆解成功视频的技巧
+
+从今天开始创作吧！别忘了：每位专家都曾是新手。你的 Veo3 提示之旅，就从此刻起步！
+    `,
   },
-  {
-    id: "video-script-writing-tips",
-    title: "10 Essential Video Script Writing Tips for Content Creators",
-    excerpt:
-      "Discover proven techniques for writing engaging video scripts that captivate your audience and drive results. Perfect for YouTube, TikTok, and social media creators.",
+  "video-script-writing-tips": {
+    title: "创作者必备：10 条视频脚本写作技巧",
     author: "Mike Chen",
     date: "2024-01-18",
-    image: "/placeholder.svg?height=200&width=400&text=Script+Writing",
-    category: "Tutorial",
-    readTime: "8 min read",
-  },
-  {
-    id: "ai-video-generation-trends-2024",
-    title: "AI Video Generation Trends 2024: What's Next for Content Creation",
-    excerpt:
-      "Explore the latest trends in AI video generation, from Veo3 to Sora, and discover how these technologies are revolutionizing content creation across industries.",
-    author: "Alex Rivera",
-    date: "2024-01-15",
-    image: "/placeholder.svg?height=200&width=400&text=AI+Trends+2024",
-    category: "Industry",
-    readTime: "10 min read",
-  },
-  {
-    id: "optimize-prompts-better-results",
-    title: "How to Optimize Your Prompts for Better AI Video Results",
-    excerpt:
-      "Master the art of prompt optimization with practical tips and examples. Learn how small changes in your prompts can dramatically improve your AI video output quality.",
-    author: "Emma Thompson",
-    date: "2024-01-12",
-    image: "/placeholder.svg?height=200&width=400&text=Prompt+Optimization",
-    category: "Tips",
-    readTime: "7 min read",
-  },
-  {
-    id: "veo3-vs-competitors-comparison",
-    title: "Veo3 vs Competitors: Comprehensive AI Video Tool Comparison",
-    excerpt:
-      "An in-depth comparison of Veo3 against other leading AI video generation tools. Find out which platform best suits your content creation needs and budget.",
-    author: "David Park",
-    date: "2024-01-10",
-    image: "/placeholder.svg?height=200&width=400&text=Tool+Comparison",
-    category: "Comparison",
-    readTime: "15 min read",
-  },
-]
+    image: "/placeholder.svg?height=400&width=800&text=Script+Writing",
+    category: "教程",
+    readTime: "阅读约 8 分钟",
+    content: `
+# 创作者必备：10 条视频脚本写作技巧
 
-export default function BlogPage() {
+优秀的视频脚本对于打造有吸引力、能引发共鸣的内容至关重要。无论是做 YouTube、TikTok，还是企业宣传片，这些关键技巧都能帮助你写出更抓人的脚本。
+
+## 1. 强势开场
+
+前 5–10 秒至关重要。你需要立刻抓住观众注意力，并给出继续观看的理由。
+
+### 有效开场技巧：
+- **提出有吸引力的问题**：“如果我告诉你 90% 的人都做错了呢？”
+- **抛出大胆观点**：“这个简单技巧会彻底改变你的效率观”
+- **制造悬念**：“这就是成功创业者不愿公开的秘密”
+- **给出数据**：“接下来 60 秒，你会学到让我收入增长 300% 的方法”
+
+### 示例：
+不要说：“大家好，今天聊社交媒体营销”
+可以说：“我用一个大多数营销人忽略的小技巧，30 天涨粉 10 万 —— 具体怎么做？”
+
+## 2. 深入了解你的受众
+
+写作前先搞清你在跟谁说话：
+
+- **人口统计**：年龄、性别、地区、收入
+- **心理画像**：兴趣、价值观、痛点、渴望
+- **观看习惯**：什么时候看？用什么设备？
+- **语言偏好**：正式/口语、专业/通俗
+
+### 研究方法：
+- 分析现有受众数据
+- 调研问卷
+- 研究竞品评论区
+- 使用社媒监听工具
+
+## 3. 用结构提升影响力
+
+### AIDA 框架：
+- **Attention 注意**：开头抓住注意力
+- **Interest 兴趣**：建立好奇与参与
+- **Desire 欲望**：让观众看到收获
+- **Action 行动**：明确的行动号召
+
+### “问题-解决”结构：
+1. 明确一个痛点
+2. 放大痛点（展示后果）
+3. 提出解决方案
+4. 解释运行原理
+5. 行动号召
+
+## 4. 写得像“说话”一样自然
+
+脚本要读起来顺口、说起来顺畅：
+
+### 小技巧：
+- **多用缩写**：don't / can't 更口语
+- **适度口头语**：恰当的“嗯”“你知道吗”更自然
+- **句式有张弛**：短句有力，长句解释
+- **使用主动语态**：“我做了这个方法”而非“这个方法被我使用”
+
+### 朗读测试：
+写完一定大声读一遍。不顺就改。
+
+## 5. 讲好故事
+
+故事的记忆点是仅有事实的 22 倍。尝试融入：
+
+- **人物**：故事的主角是谁？
+- **冲突**：遇到了什么难题？
+- **解决**：如何被解决？
+- **启示**：观众能学到什么？
+
+### 示例：
+“去年我的视频播放一直上不去。我保持更新却毫无起色。直到我发现一个方法，30 天内播放量涨了 5 倍。下面就是我完整的做法……”
+
+## 6. 具体，具体，再具体
+
+具体的细节更有说服力：
+
+- “能帮你赚钱” → “上个月我用它多赚了 3,247 美元”
+- “很多人都犯错” → “73% 的中小企业主会踩这个坑”
+- “很快见效” → “48 小时内能看到结果”
+
+## 7. 利用停顿与强调
+
+脚本应当指导你的表达与节奏：
+
+- **大写**：强调重音
+- *斜体*：语气变化
+- (停顿)：制造张力
+- [动作提示]：视觉化说明
+
+### 例：
+“真正**没人说到**的点在这里……（停顿）……秘密并不是你以为的那样。*其实更简单。*”
+
+## 8. 针对不同平台做适配
+
+### YouTube（长视频）
+- 教学类 8–15 分钟
+- 详解 + 示例
+- 多个价值点
+- 全程设置留存“钩子”
+
+### TikTok/Instagram Reels（短视频）
+- 15–60 秒
+- 每条只讲一个重点
+- 速度快、信息密度高
+- 语言贴合潮流
+
+### LinkedIn
+- 专业语气
+- 行业洞见
+- 1–3 分钟最佳
+- 突出商业价值
+
+## 9. 写出有力的行动号召（CTA）
+
+好的 CTA 要具体、紧迫、对用户有价值：
+
+### 弱 CTA：
+- “点赞关注”
+- “访问我们的网站”
+- “告诉我你的想法”
+
+### 强 CTA：
+- “如果这条内容帮你省了时间，就点个赞并订阅获取更多效率技巧”
+- “描述区有免费模板，马上下载照着做”
+- “评论区回复‘READY’，我把完整清单发给你”
+
+## 10. 狠心修改
+
+好脚本是“改”出来的：
+
+### 修改清单：
+- **删赘述**：每句话都要有价值
+- **收紧语言**：更少的词说清同样意思
+- **理顺结构**：段落是否自然衔接？
+- **核对时长**：符合预期视频时长吗？
+- **检验清晰度**：新手能否听懂？
+
+### 50% 规则：
+尝试把初稿删减 50%。这会迫使你只保留真正关键的内容。
+
+## 进阶加分项
+
+### 打破预期（Pattern Interrupt）
+用意外的转折抓注意力：
+- “等等，还有更多……其实并没有。这就是重点。”
+- “你可能以为答案是 X，但其实是 Y”
+
+### 设置开放性悬念（Open Loop）
+先提及，后解释：
+- “一会儿我会告诉你最大的坑，但先来……”
+- “第三条是我最喜欢的，结尾解释原因”
+
+### 社会证明（Social Proof）
+引用案例与背书：
+- “Sarah 用这招把销量提升了 40%”
+- “见诸《福布斯》《创业家》杂志”
+
+## 常见脚本错误
+
+1. **从自我介绍开场**：应当直接“给价值”
+2. **太推销**：以帮助为先
+3. **忽视时长匹配**：脚本长度要与平台习惯一致
+4. **忘了视觉元素**：别把视频当纯音频
+5. **不做用户测试**：发布前找人试读
+
+## 写作工具与资源
+
+### 写作工具：
+- **Grammarly**：语法与语气
+- **Hemingway Editor**：可读性
+- **Google Docs**：协作与版本
+
+### 研究工具：
+- **Answer The Public**：常见问题
+- **Google Trends**：趋势话题
+- **社媒分析**：受众偏好
+
+### 时长工具：
+- **在线阅读时长估算器**
+- **提词器 App**：演练表达
+
+## 衡量脚本效果
+
+关注以下指标进行优化：
+
+- **留存率**：观众停留多久？
+- **互动率**：点赞、评论、分享
+- **点击率**：是否引导到你的行动？
+- **完播率**：是否看到结尾？
+
+## 结语
+
+写好视频脚本是一个不断练习的过程。从这些基础开始，不断尝试并找到你的个人风格。记住：最好的脚本既真实又有价值。
+
+脚本是视频成功的地基。多投入一点时间，你会看到在互动、留存与结果上的明显提升。
+
+持续写、持续测、持续优化。你的观众正在等待只有你能提供的价值！
+    `,
+  },
+  // Add more blog posts here...
+}
+
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  const post = blogPosts[params.slug as keyof typeof blogPosts]
+
+  if (!post) {
+    notFound()
+  }
+
   return (
     <main>
-      <section className="py-16 bg-gradient-to-br from-background to-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-            Veo3 <span className="text-primary">Blog</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Insights, tutorials, and best practices for AI video generation, prompt engineering, and content creation.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader className="p-0">
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <Image
-                      src={post.image || "/placeholder.svg"}
-                      alt={post.title}
-                      width={400}
-                      height={200}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <Badge className="absolute top-4 left-4 bg-primary">{post.category}</Badge>
+          <div className="max-w-4xl mx-auto">
+            <Button variant="ghost" asChild className="mb-8">
+              <Link href="/blog">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                返回博客
+              </Link>
+            </Button>
+
+            <article>
+              <header className="mb-8">
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <Image
+                    src={post.image || "/placeholder.svg"}
+                    alt={post.title}
+                    width={800}
+                    height={400}
+                    className="w-full h-64 sm:h-80 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-primary">{post.category}</Badge>
+                </div>
+
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{post.title}</h1>
+
+                <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8">
+                  <div className="flex items-center gap-2">
+                    <User className="h-4 w-4" />
+                    <span>{post.author}</span>
                   </div>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                    <div className="flex items-center gap-1">
-                      <User className="h-4 w-4" />
-                      {post.author}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <CalendarDays className="h-4 w-4" />
-                      {new Date(post.date).toLocaleDateString()}
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <CalendarDays className="h-4 w-4" />
+                    <span>{new Date(post.date).toLocaleDateString()}</span>
                   </div>
-                  <CardTitle className="mb-3 group-hover:text-primary transition-colors">
-                    <Link href={`/blog/${post.id}`}>{post.title}</Link>
-                  </CardTitle>
-                  <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <Link href={`/blog/${post.id}`} className="text-primary hover:underline font-medium">
-                      Read More
-                    </Link>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Clock className="h-4 w-4" />
-                      {post.readTime}
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    <span>{post.readTime}</span>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </header>
+
+              <div className="prose prose-lg max-w-none">
+                {post.content.split("\n").map((paragraph, index) => {
+                  if (paragraph.startsWith("# ")) {
+                    return (
+                      <h1 key={index} className="text-3xl font-bold mt-8 mb-4">
+                        {paragraph.slice(2)}
+                      </h1>
+                    )
+                  } else if (paragraph.startsWith("## ")) {
+                    return (
+                      <h2 key={index} className="text-2xl font-bold mt-6 mb-3">
+                        {paragraph.slice(3)}
+                      </h2>
+                    )
+                  } else if (paragraph.startsWith("### ")) {
+                    return (
+                      <h3 key={index} className="text-xl font-bold mt-4 mb-2">
+                        {paragraph.slice(4)}
+                      </h3>
+                    )
+                  } else if (paragraph.startsWith("- ")) {
+                    return (
+                      <li key={index} className="ml-4">
+                        {paragraph.slice(2)}
+                      </li>
+                    )
+                  } else if (paragraph.trim() === "") {
+                    return <br key={index} />
+                  } else {
+                    return (
+                      <p key={index} className="mb-4 leading-relaxed">
+                        {paragraph}
+                      </p>
+                    )
+                  }
+                })}
+              </div>
+            </article>
+
+            <div className="mt-12 pt-8 border-t">
+              <div className="text-center">
+                <h3 className="text-xl font-bold mb-4">想立即创建你的内容吗？</h3>
+                <Button asChild size="lg">
+                  <Link href="/">体验 VeO3 提示生成器</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
